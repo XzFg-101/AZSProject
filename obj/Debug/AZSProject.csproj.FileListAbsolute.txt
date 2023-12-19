@@ -1,0 +1,16 @@
+C:\Users\skoln\source\repos\AZSProject\AZSProject\bin\Debug\AZSProject.exe.config
+C:\Users\skoln\source\repos\AZSProject\AZSProject\bin\Debug\AZSProject.exe
+C:\Users\skoln\source\repos\AZSProject\AZSProject\bin\Debug\AZSProject.pdb
+C:\Users\skoln\source\repos\AZSProject\AZSProject\obj\Debug\AZSProject.csproj.AssemblyReference.cache
+C:\Users\skoln\source\repos\AZSProject\AZSProject\obj\Debug\AZSProject.csproj.SuggestedBindingRedirects.cache
+C:\Users\skoln\source\repos\AZSProject\AZSProject\obj\Debug\MainWindow.g.cs
+C:\Users\skoln\source\repos\AZSProject\AZSProject\obj\Debug\App.g.cs
+C:\Users\skoln\source\repos\AZSProject\AZSProject\obj\Debug\AZSProject_MarkupCompile.cache
+C:\Users\skoln\source\repos\AZSProject\AZSProject\obj\Debug\AZSProject_MarkupCompile.lref
+C:\Users\skoln\source\repos\AZSProject\AZSProject\obj\Debug\MainWindow.baml
+C:\Users\skoln\source\repos\AZSProject\AZSProject\obj\Debug\AZSProject.g.resources
+C:\Users\skoln\source\repos\AZSProject\AZSProject\obj\Debug\AZSProject.Properties.Resources.resources
+C:\Users\skoln\source\repos\AZSProject\AZSProject\obj\Debug\AZSProject.csproj.GenerateResource.cache
+C:\Users\skoln\source\repos\AZSProject\AZSProject\obj\Debug\AZSProject.csproj.CoreCompileInputs.cache
+C:\Users\skoln\source\repos\AZSProject\AZSProject\obj\Debug\AZSProject.exe
+C:\Users\skoln\source\repos\AZSProject\AZSProject\obj\Debug\AZSProject.pdb
