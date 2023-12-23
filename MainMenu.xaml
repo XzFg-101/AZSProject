@@ -1,0 +1,29 @@
+﻿<Window x:Class="AZSProject.MainMenu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AZSProject"
+        mc:Ignorable="d"
+        Title="MainMenu" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Column="1" Margin="0,135,0,10" Grid.RowSpan="2">
+            <StackPanel Margin="0,25,0,12">
+                <Button Content="Тех. поддержка" Margin="4"></Button>
+                <Button Content="Топливо" Margin="4"></Button>
+                <Button Content="Дополнительные услуги" Margin="4"></Button>
+                <Button Content="Выход из системы" Margin="4"></Button>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
