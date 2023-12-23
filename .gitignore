@@ -1,5 +1,7 @@
-obj
+/node_modules
 
-bin
+/obj
 
-.vs
+/bin
+
+/.vs
