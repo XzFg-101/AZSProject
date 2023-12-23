@@ -45,7 +45,7 @@ namespace AZSProject
         }
         public void Register(object sender, RoutedEventArgs e)
         {
-            if (dataBaseService.RegistrateUser(PhoneNumber.Text, Password.Password, !isEmployee.IsChecked.Value))
+            if (!dataBaseService.RegistrateUser(PhoneNumber.Text, Password.Password, !isEmployee.IsChecked.Value))
             {
                 StatusText.Text = "Неверные данные для регистрации";
             }
