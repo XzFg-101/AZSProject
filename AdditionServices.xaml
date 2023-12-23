@@ -14,14 +14,8 @@
             <RowDefinition Height="10*"></RowDefinition>
         </Grid.RowDefinitions>
         <ScrollViewer Grid.Row="1">
-            <StackPanel>
-                <Button Content="Apples"></Button>
-                <Button Content="Apples"></Button>
-                <Button Content="Apples"></Button>
-                <Button Content="Apples"></Button>
-                <Button Content="Apples"></Button>
-                <Button Content="Apples"></Button>
-                <Button Content="Apples"></Button>
+            <StackPanel x:Name="Panel">
+                
             </StackPanel>
         </ScrollViewer>
         <TextBlock Text="Дополнительные услуги:"></TextBlock>

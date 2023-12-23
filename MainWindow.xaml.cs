@@ -54,5 +54,10 @@ namespace AZSProject
                 Login(sender, e);
             }
         }
+        public void Button_Click(object sender, RoutedEventArgs e)
+        {
+            AdditionServices addition = new AdditionServices();
+            addition.Show();
+        }
     }
 }

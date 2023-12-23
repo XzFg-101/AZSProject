@@ -38,8 +38,13 @@
             <PasswordBox Grid.Column ="1" Grid.Row="3" Grid.ColumnSpan="3" Name="Password" Margin="0,0,10,0"></PasswordBox>
             <CheckBox Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2" x:Name="isEmployee" IsThreeState="False" IsChecked="False" Height="20" Content="Являюсь сотруднком" />
             <TextBlock Text="Пароль:" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="3" Margin="0,3,10,0"/>
+<<<<<<< HEAD
             <Button Name ="LoginButton" Grid.Column="1" Grid.Row="5" Content="Войти" Margin="10,0,10,0" Click="Login"></Button>
             <Button Name ="RegButton" Grid.Column="2" Grid.Row="5" Content="Регистрация" Click="Register" Margin="10,0,10,0"/>
+=======
+            <Button Grid.Column="1" Grid.Row="5" Content="Войти" Margin="10,0,10,0" Click="Button_Click"></Button>
+            <Button Grid.Column="2" Grid.Row="5" Content="Регистрация" Margin="10,0,10,0"/>
+>>>>>>> 723f9cfaeebe8a86351da20540d077adc0caf094
         </Grid>
     </Grid>
 </Window>
