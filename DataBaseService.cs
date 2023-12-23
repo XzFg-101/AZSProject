@@ -81,5 +81,10 @@ namespace AZSProject
         {
             return _productConnection.Table<Service>().ToList().ToArray();
         }
+        public void CloseConnections()
+        {
+            _userConnection.Close();
+            _productConnection.Close();
+        }
     }
 }
