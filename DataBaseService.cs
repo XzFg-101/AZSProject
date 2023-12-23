@@ -20,7 +20,10 @@ namespace AZSProject
             _productConnection?.Close();
 
             _userConnection = new SQLiteConnection("UserData.db");
+            _userConnection.CreateTable<User>();
             _productConnection = new SQLiteConnection("ProductData.db");
+            _productConnection.CreateTable<Fuel>();
+            _productConnection.CreateTable<Service>();
         }
         public void CreateUser(User user)
         {
@@ -80,11 +83,6 @@ namespace AZSProject
         public Service[] GetServiceArray()
         {
             return _productConnection.Table<Service>().ToList().ToArray();
-        }
-        public void CloseConnections()
-        {
-            _userConnection.Close();
-            _productConnection.Close();
         }
     }
 }
