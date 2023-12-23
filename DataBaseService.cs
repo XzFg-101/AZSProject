@@ -22,8 +22,8 @@ namespace AZSProject
             _userConnection = new SQLiteConnection("UserData.db");
             _userConnection.CreateTable<User>();
             _productConnection = new SQLiteConnection("ProductData.db");
-            _userConnection.CreateTable<Fuel>();
-            _userConnection.CreateTable<Service>();
+            _productConnection.CreateTable<Fuel>();
+            _productConnection.CreateTable<Service>();
         }
         public void CreateUser(User user)
         {
