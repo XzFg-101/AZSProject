@@ -22,6 +22,17 @@ namespace AZSProject
         public AdditionServices()
         {
             InitializeComponent();
+
+            DataBaseService dataBase = new DataBaseService();
+            dataBase.InitalizeConnections();
+
+            foreach(var item in dataBase.GetServiceArray())
+            {
+                Button button = new Button();
+                button.Height = 50;
+                button.Content = $"{item.Name}    цена: {item.Price}"; 
+                Panel.Children.Add(button);
+            }
         }
     }
 }
