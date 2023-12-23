@@ -20,9 +20,35 @@ namespace AZSProject
     /// </summary>
     public partial class MainWindow : Window
     {
+        private DataBaseService dataBaseService;
         public MainWindow()
         {
-            InitializeComponent();
+            DataBaseService dataBaseService = new DataBaseService();
+            dataBaseService.InitalizeConnections();
+            //InitializeComponent();
+        }
+        public void Login(object sender, RoutedEventArgs e)
+        {
+            var user = dataBaseService.LoginUser(PhoneNumber.Text, Password.Password);
+            if (user == null)
+            {
+                StatusText.Text = "Неверные данные";
+            }
+            else
+            {
+                
+            }
+        }
+        public void Register(object sender, RoutedEventArgs e)
+        {
+            if (dataBaseService.RegistrateUser(PhoneNumber.Text, Password.Password, !isEmployee.IsChecked.Value))
+            {
+                StatusText.Text = "Неверные данные для регистрации";
+            }
+            else
+            {
+                
+            }
         }
     }
 }
