@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace AZSProject
 {
-    internal class RegLogContext
+    public class RegLogContext
     {
+
     }
 }

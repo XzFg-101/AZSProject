@@ -23,9 +23,10 @@ namespace AZSProject
         private DataBaseService dataBaseService;
         public MainWindow()
         {
-            DataBaseService dataBaseService = new DataBaseService();
+            InitializeComponent();
+
+            dataBaseService = new DataBaseService();
             dataBaseService.InitalizeConnections();
-            //InitializeComponent();
         }
         public void Login(object sender, RoutedEventArgs e)
         {
@@ -36,7 +37,10 @@ namespace AZSProject
             }
             else
             {
-                
+                UserInfoProvider.SetUser(user);
+                var mainMenu = new MainMenu();
+                mainMenu.Show();
+                this.Close();
             }
         }
         public void Register(object sender, RoutedEventArgs e)
@@ -47,7 +51,7 @@ namespace AZSProject
             }
             else
             {
-                
+                Login(sender, e);
             }
         }
     }
