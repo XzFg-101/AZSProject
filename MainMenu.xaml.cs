@@ -23,5 +23,19 @@ namespace AZSProject
         {
             InitializeComponent();
         }
+
+        public void ButtonService_Click(object sender, RoutedEventArgs e)
+        {
+            AdditionServices addition = new AdditionServices();
+            addition.Show();
+            Close();
+        }
+
+        public void ButtonFuel_Click(object sender, RoutedEventArgs e)
+        {
+            Fuel fuel = new Fuel();
+            fuel.Show();
+            Close();
+        }
     }
 }

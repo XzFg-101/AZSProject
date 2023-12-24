@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace AZSProject
 {
     [Table("Fuel")]
-    public class Fuel
+    public partial class Fuel
     {
         public string Name { get; set; }
         public double Price { get; set; }
