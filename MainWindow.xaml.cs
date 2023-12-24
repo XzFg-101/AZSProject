@@ -49,6 +49,7 @@ namespace AZSProject
             }
             else
             {
+                if ((bool)isEmployee.IsChecked) user.IsClient = true; 
                 UserInfoProvider.SetUser(user);
                 var mainMenu = new MainMenu();
                 mainMenu.Show();
@@ -66,7 +67,7 @@ namespace AZSProject
                 return;
             }
 
-            if (!dataBaseService.RegistrateUser(phoneNumber, Password.Password, !isEmployee.IsChecked.Value))
+            if (!dataBaseService.RegistrateUser(phoneNumber, Password.Password))
             {
                 StatusText.Text = "Неверные данные для регистрации";
             }

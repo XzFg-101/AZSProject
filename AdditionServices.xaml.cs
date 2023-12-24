@@ -28,17 +28,28 @@ namespace AZSProject
 
             foreach (var item in dataBase.GetServiceArray())
             {
-                Button button = new Button();
+                ProductHolderButton button = new ProductHolderButton();
                 button.Height = 50;
-                button.Content = $"{item.Name}    цена: {item.Price}"; 
+                button.Product = item;
+                button.Content = $"{item.Name}    цена: {item.Price}";
+                button.Click += Button_Click;
                 ServicesPanel.Children.Add(button);
             } 
         }
         public void Button_Click(object sender, RoutedEventArgs e)
         {
-            MainMenu menu = new MainMenu();
-            menu.Show();
-            Close();
+            if (sender is ProductHolderButton button && button.Product != null)
+            {
+                var productMenu = new ProductMenu(button.Product);
+                productMenu.Show();
+                //Close();
+            }
+        }
+        public void Back(object sender, RoutedEventArgs e)
+        {
+            MainMenu mainMenu = new MainMenu();
+            mainMenu.Show();
+            this.Close();
         }
     }
 }

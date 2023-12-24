@@ -11,6 +11,6 @@
             
         </StackPanel>
         <TextBlock Text="Топливо:" Margin="0,0,0,383" Grid.RowSpan="2" FontSize="15"></TextBlock>
-        <Button Grid.Column="0" Grid.Row="0" Content="Назад" Width="100" Height="30" Margin="0,26,700,358" Grid.RowSpan="2" Click="Button_Click"/>
+        <Button Grid.Column="0" Grid.Row="0" Content="Назад" Width="100" Height="30" Margin="0,26,700,358" Grid.RowSpan="2" Click="Back"/>
     </Grid>
 </Window>

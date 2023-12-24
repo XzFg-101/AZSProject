@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AZSProject.Models;
 using SQLite;
 
 namespace AZSProject
@@ -63,7 +64,7 @@ namespace AZSProject
         /// <param name="password"></param>
         /// <param name="isClient"></param>
         /// <returns>True - еслия успешная регистрация, False - если нет</returns>
-        public bool RegistrateUser(string login, string password, bool isClient)
+        public bool RegistrateUser(string login, string password)
         {
             var user = GetUser(login);
             if (user != null)
@@ -72,7 +73,7 @@ namespace AZSProject
             }
             else
             {
-                CreateUser(new User { PhoneNumber = login, Password = password, IsClient = isClient });
+                CreateUser(new User { PhoneNumber = login, Password = password, IsClient = true });
                 return true;
             }
         }
@@ -88,6 +89,20 @@ namespace AZSProject
         {
             _userConnection.Close();
             _productConnection.Close();
+        }
+        public void UpdateProduct(Product product)
+        {
+            if (product is Fuel)
+            {
+                _productConnection.Update((Fuel)product);
+            }
+            else if (product is Service)
+            {
+                _productConnection.Update((Service)product);
+            }
+            // Добавьте другие типы товаров по необходимости
+
+            // Пример: _productConnection.Update(product);
         }
     }
 }

@@ -10,6 +10,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace AZSProject
@@ -17,6 +18,7 @@ namespace AZSProject
     /// <summary>
     /// Логика взаимодействия для Fuel.xaml
     /// </summary>
+    /// 
     public partial class FuelMenu : Window
     {
         public FuelMenu()
@@ -28,18 +30,29 @@ namespace AZSProject
 
             foreach(var item in dataBase.GetFuelArray())
             {
-                Button button = new Button();
+                ProductHolderButton button = new ProductHolderButton();
                 button.Height = 50;
                 button.Content = $"{item.Name}   цена: {item.Price}";
+                button.Click += Button_Click;
+                button.Product = item;
                 FuelPanel.Children.Add(button);
             }
             dataBase.CloseConnections();
         }
         public void Button_Click(object sender, RoutedEventArgs e)
         {
-            MainMenu menu = new MainMenu();
-            menu.Show();
-            Close();
+            if (sender is ProductHolderButton button && button.Product != null)
+            {
+                var productMenu = new ProductMenu(button.Product);
+                productMenu.Show();
+                //Close();
+            }
+        }
+        public void Back(object sender, RoutedEventArgs e)
+        {
+            MainMenu mainMenu = new MainMenu();
+            mainMenu.Show();
+            this.Close();
         }
     }
 }
