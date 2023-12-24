@@ -23,19 +23,19 @@ namespace AZSProject
         {
             InitializeComponent();
         }
-        public void Button_Click(object sender, RoutedEventArgs e)
-        {
-            if(Service.Name == "Service")
-            {
-                AdditionServices addition = new AdditionServices();
-                addition.Show();
-                Close();
-            }
-            /*
-            if(Name == "Out")
-            {
 
-            }*/
+        public void ButtonService_Click(object sender, RoutedEventArgs e)
+        {
+            AdditionServices addition = new AdditionServices();
+            addition.Show();
+            Close();
+        }
+
+        public void ButtonFuel_Click(object sender, RoutedEventArgs e)
+        {
+            Fuel fuel = new Fuel();
+            fuel.Show();
+            Close();
         }
     }
 }

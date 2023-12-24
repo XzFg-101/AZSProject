@@ -103,10 +103,17 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="DataBaseService.cs" />
+    <Compile Include="Fuel.xaml.cs">
+      <DependentUpon>Fuel.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Models\Fuel.cs" />
     <Compile Include="Models\Service.cs" />
     <Compile Include="Models\User.cs" />
     <Page Include="AdditionServices.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Fuel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
