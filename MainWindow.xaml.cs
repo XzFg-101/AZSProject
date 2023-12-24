@@ -52,6 +52,7 @@ namespace AZSProject
                 UserInfoProvider.SetUser(user);
                 var mainMenu = new MainMenu();
                 mainMenu.Show();
+                dataBaseService.CloseConnections();
                 this.Close();
             }
         }

@@ -22,6 +22,7 @@ namespace AZSProject
         public MainMenu()
         {
             InitializeComponent();
+            StatusText.Text = UserInfoProvider.IsClient() ? "Авторизован как КЛИЕНТ" : "Авторизован как СОТРУДНИК";
         }
 
         public void ButtonService_Click(object sender, RoutedEventArgs e)

@@ -17,6 +17,7 @@
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
+        <TextBlock Name="StatusText" Text="Вы авторизованы как: Клиент" Margin="100,0,0,0" Grid.Row="0" Grid.Column="2"></TextBlock>
         <Grid Grid.Column="1" Margin="0,115,0,117" Grid.RowSpan="3">
             <StackPanel Margin="0,25,0,12">
                 <Button x:Name="Support" Content="Тех. поддержка" Margin="4" Click="ButtonSupport_Click"></Button>

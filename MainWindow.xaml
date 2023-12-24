@@ -40,8 +40,6 @@
             <TextBlock Text="Пароль:" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="3" Margin="0,3,10,0"/>
             <Button Name ="LoginButton" Grid.Column="1" Grid.Row="5" Content="Войти" Margin="10,0,10,0" Click="Login"></Button>
             <Button Name ="RegButton" Grid.Column="2" Grid.Row="5" Content="Регистрация" Click="Register" Margin="10,0,10,0"/>
-            <Button Grid.Column="1" Grid.Row="5" Content="Войти" Margin="10,0,10,0" Click="Button_Click"></Button>
-                <Button Grid.Column="2" Grid.Row="5" Content="Регистрация" Margin="10,0,10,0"/>
         </Grid>
     </Grid>
 </Window>

@@ -17,5 +17,9 @@ namespace AZSProject
         {
             _loggedUser = user;
         }
+        public static bool IsClient()
+        {
+            return _loggedUser.IsClient;
+        }
     }
 }
