@@ -61,3 +61,5 @@ C:\Users\skoln\AZSProject\bin\Debug\System.Memory.xml
 C:\Users\skoln\AZSProject\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\skoln\AZSProject\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\skoln\AZSProject\obj\Debug\AZSProject_Content.g.cs
+C:\Users\skoln\AZSProject\obj\Debug\FuelMenu.g.cs
+C:\Users\skoln\AZSProject\obj\Debug\FuelMenu.baml

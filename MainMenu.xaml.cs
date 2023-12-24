@@ -33,7 +33,7 @@ namespace AZSProject
 
         public void ButtonFuel_Click(object sender, RoutedEventArgs e)
         {
-            Fuel fuel = new Fuel();
+            FuelMenu fuel = new FuelMenu();
             fuel.Show();
             Close();
         }
