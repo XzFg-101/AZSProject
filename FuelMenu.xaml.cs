@@ -17,9 +17,9 @@ namespace AZSProject
     /// <summary>
     /// Логика взаимодействия для Fuel.xaml
     /// </summary>
-    public partial class Fuel : Window
+    public partial class FuelMenu : Window
     {
-        public Fuel()
+        public FuelMenu()
         {
             InitializeComponent();
 
