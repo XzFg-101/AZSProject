@@ -26,13 +26,19 @@ namespace AZSProject
             DataBaseService dataBase = new DataBaseService();
             dataBase.InitalizeConnections();
 
-            foreach(var item in dataBase.GetServiceArray())
+            foreach (var item in dataBase.GetServiceArray())
             {
                 Button button = new Button();
                 button.Height = 50;
                 button.Content = $"{item.Name}    цена: {item.Price}"; 
                 Panel.Children.Add(button);
-            }
+            } 
+        }
+        public void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MainMenu menu = new MainMenu();
+            menu.Show();
+            Close();
         }
     }
 }
