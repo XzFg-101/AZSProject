@@ -15,24 +15,25 @@ using System.Windows.Shapes;
 namespace AZSProject
 {
     /// <summary>
-    /// Логика взаимодействия для AdditionServices.xaml
+    /// Логика взаимодействия для Fuel.xaml
     /// </summary>
-    public partial class AdditionServices : Window
+    public partial class Fuel : Window
     {
-        public AdditionServices()
+        public Fuel()
         {
             InitializeComponent();
 
             DataBaseService dataBase = new DataBaseService();
             dataBase.InitalizeConnections();
 
-            foreach (var item in dataBase.GetServiceArray())
+            foreach(var item in dataBase.GetFuelArray())
             {
                 Button button = new Button();
                 button.Height = 50;
-                button.Content = $"{item.Name}    цена: {item.Price}"; 
-                ServicesPanel.Children.Add(button);
-            } 
+                button.Content = $"{item.Name}   цена: {item.Price}";
+                FuelPanel.Children.Add(button);
+            }
+            dataBase.CloseConnections();
         }
         public void Button_Click(object sender, RoutedEventArgs e)
         {

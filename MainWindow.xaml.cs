@@ -56,8 +56,9 @@ namespace AZSProject
         }
         public void Button_Click(object sender, RoutedEventArgs e)
         {
-            AdditionServices addition = new AdditionServices();
-            addition.Show();
+            MainMenu menu = new MainMenu();
+            menu.Show();
+            Close();
         }
     }
 }

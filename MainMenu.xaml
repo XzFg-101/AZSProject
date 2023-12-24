@@ -19,10 +19,10 @@
         </Grid.RowDefinitions>
         <Grid Grid.Column="1" Margin="0,135,0,10" Grid.RowSpan="2">
             <StackPanel Margin="0,25,0,12">
-                <Button Content="Тех. поддержка" Margin="4"></Button>
-                <Button Content="Топливо" Margin="4"></Button>
-                <Button Content="Дополнительные услуги" Margin="4"></Button>
-                <Button Content="Выход из системы" Margin="4"></Button>
+                <Button x:Name="Support" Content="Тех. поддержка" Margin="4"></Button>
+                <Button x:Name="Fuel" Content="Топливо" Margin="4" Click="ButtonFuel_Click"></Button>
+                <Button x:Name="Service" Content="Дополнительные услуги" Margin="4" Click="ButtonService_Click"></Button>
+                <Button x:Name="Out" Content="Выход из системы" Margin="4"></Button>
             </StackPanel>
         </Grid>
     </Grid>
