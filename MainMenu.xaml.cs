@@ -37,5 +37,10 @@ namespace AZSProject
             fuel.Show();
             Close();
         }
+
+        public void ButtonClose_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
