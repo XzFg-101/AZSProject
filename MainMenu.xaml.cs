@@ -37,5 +37,14 @@ namespace AZSProject
             fuel.Show();
             Close();
         }
+
+        public void ButtonClose_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+        public void ButtonSupport_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show($"Номер телефона тех. поддержки: 8(123)-123-12-12");
+        }
     }
 }
