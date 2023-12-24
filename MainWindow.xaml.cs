@@ -28,9 +28,21 @@ namespace AZSProject
             dataBaseService = new DataBaseService();
             dataBaseService.InitalizeConnections();
         }
+        private bool IsPhoneNumberValid(string phoneNumber)
+        {
+            return phoneNumber.Length == 11 && phoneNumber.All(char.IsDigit);
+        }
         public void Login(object sender, RoutedEventArgs e)
         {
-            var user = dataBaseService.LoginUser(PhoneNumber.Text, Password.Password);
+            string phoneNumber = PhoneNumber.Text;
+
+            if (!IsPhoneNumberValid(phoneNumber))
+            {
+                StatusText.Text = "Неверный номер телефона";
+                return;
+            }
+
+            var user = dataBaseService.LoginUser(phoneNumber, Password.Password);
             if (user == null)
             {
                 StatusText.Text = "Неверные данные";
@@ -45,7 +57,15 @@ namespace AZSProject
         }
         public void Register(object sender, RoutedEventArgs e)
         {
-            if (!dataBaseService.RegistrateUser(PhoneNumber.Text, Password.Password, !isEmployee.IsChecked.Value))
+            string phoneNumber = PhoneNumber.Text;
+
+            if (!IsPhoneNumberValid(phoneNumber))
+            {
+                StatusText.Text = "Неверный номер телефона";
+                return;
+            }
+
+            if (!dataBaseService.RegistrateUser(phoneNumber, Password.Password, !isEmployee.IsChecked.Value))
             {
                 StatusText.Text = "Неверные данные для регистрации";
             }
@@ -53,12 +73,6 @@ namespace AZSProject
             {
                 Login(sender, e);
             }
-        }
-        public void Button_Click(object sender, RoutedEventArgs e)
-        {
-            MainMenu menu = new MainMenu();
-            menu.Show();
-            Close();
         }
     }
 }
