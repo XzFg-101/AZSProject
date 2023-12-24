@@ -32,7 +32,7 @@
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition Name="rightIndnt" Width="10"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <TextBlock Text="Номер телфона:" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="3" Margin="0,5,10,0"></TextBlock>
+            <TextBlock Text="Номер телефона:" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="3" Margin="0,5,10,0"></TextBlock>
             <TextBox Grid.Column ="1" Grid.Row="1" Grid.ColumnSpan="3" Name="phoneNumber" Margin="0,0,10,26" Grid.RowSpan="2"></TextBox>
             <PasswordBox Grid.Column ="1" Grid.Row="3" Grid.ColumnSpan="3" Name="password" Margin="0,0,10,0"></PasswordBox>
             <CheckBox Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2" x:Name="isEmployee" IsThreeState="False" IsChecked="False" Height="20" Content="Являюсь сотруднком" />
