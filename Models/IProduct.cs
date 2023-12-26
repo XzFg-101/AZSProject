@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace AZSProject.Models
 {
-    public interface Product
+    public interface IProduct
     {
-        [PrimaryKey]
+        [PrimaryKey, AutoIncrement]
         int Id { get; set; }
         string Description { get; set; }
         string Status { get; set; }

@@ -10,6 +10,6 @@ namespace AZSProject
 {
     public class ProductHolderButton : Button
     {
-        public Product Product { get; set; }
+        public IProduct Product { get; set; }
     }
 }

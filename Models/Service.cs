@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 namespace AZSProject
 {
     [Table("Sevice")]
-    public class Service : Product
+    public class Service : IProduct
     {
-        [PrimaryKey]
+        [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
         public string Name { get; set; }
         public double Price { get; set; }

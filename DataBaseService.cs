@@ -77,20 +77,38 @@ namespace AZSProject
                 return true;
             }
         }
-        public Fuel[] GetFuelArray()
+        public IProduct[] GetProductByType(Type type)
         {
-            return _productConnection.Table<Fuel>().ToList().ToArray();
+            if (type == typeof(Fuel))
+            {
+                return _productConnection.Table<Fuel>().ToArray();
+            }
+            else if (type == typeof(Service))
+            {
+                return _productConnection.Table<Service>().ToArray();
+            }
+            else
+            {
+                return new IProduct[0];
+            }
         }
-        public Service[] GetServiceArray()
+        public void AddProduct(IProduct product)
         {
-            return _productConnection.Table<Service>().ToList().ToArray();
+            if (product is Fuel)
+            {
+                _productConnection.Insert((Fuel)product);
+            }
+            else if (product is Service)
+            {
+                _productConnection.Insert((Service)product);
+            }
         }
         public void CloseConnections()
         {
             _userConnection.Close();
             _productConnection.Close();
         }
-        public void UpdateProduct(Product product)
+        public void UpdateProduct(IProduct product)
         {
             if (product is Fuel)
             {

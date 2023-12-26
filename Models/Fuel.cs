@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 namespace AZSProject
 {
     [Table("Fuel")]
-    public class Fuel : Product
+    public class Fuel : IProduct
     {
-        [PrimaryKey]
+        [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
         public string Name { get; set; }
         public double Price { get; set; }

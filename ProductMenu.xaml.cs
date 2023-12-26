@@ -20,8 +20,8 @@ namespace AZSProject
     /// </summary>
     public partial class ProductMenu : Window
     {
-        private Product _product;
-        public ProductMenu(Product product)
+        private IProduct _product;
+        public ProductMenu(IProduct product)
         {
             InitializeComponent();
             _product = product;

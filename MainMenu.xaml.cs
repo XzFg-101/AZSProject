@@ -27,14 +27,14 @@ namespace AZSProject
 
         public void ButtonService_Click(object sender, RoutedEventArgs e)
         {
-            AdditionServices addition = new AdditionServices();
-            addition.Show();
+            ProductCatalog additionService = new ProductCatalog("Дополнительные услуги", typeof(Service));
+            additionService.Show();
             Close();
         }
 
         public void ButtonFuel_Click(object sender, RoutedEventArgs e)
         {
-            FuelMenu fuel = new FuelMenu();
+            ProductCatalog fuel = new ProductCatalog("Топливо", typeof(Fuel));
             fuel.Show();
             Close();
         }

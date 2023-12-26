@@ -8,10 +8,10 @@ namespace AZSProject
     /// </summary>
     public partial class ProductEdit : Window
     {
-        private Product _product;
+        private IProduct _product;
         private DataBaseService _dataBaseService;
 
-        public ProductEdit(Product product)
+        public ProductEdit(IProduct product)
         {
             InitializeComponent();
             _product = product;
