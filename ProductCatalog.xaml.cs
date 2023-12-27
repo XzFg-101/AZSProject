@@ -1,91 +1,95 @@
-﻿using AZSProject.Models;
+﻿using AZSProject;
+using AZSProject.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Xml.Linq;
 
 namespace AZSProject
 {
-    /// <summary>
-    /// Логика взаимодействия для ProductCatalog.xaml
-    /// </summary>
     public partial class ProductCatalog : Window
     {
         private Type _productType;
-        public ProductCatalog(string Name, Type productType)
+
+        public string ProductTitle
+        {
+            get { return ProductTitleText.Text; }
+            set { ProductTitleText.Text = value; }
+        }
+
+        public ProductCatalog(string name, Type productType)
         {
             InitializeComponent();
             _productType = productType;
-            Update(this, null);
+            UpdateButton_Click(this, null);
         }
-        public void Add(object sender, RoutedEventArgs e)
+
+        public void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            DataBaseService dataBase = new DataBaseService();
-            dataBase.InitalizeConnections();
             var product = Activator.CreateInstance(_productType) as IProduct;
-            dataBase.AddProduct(product);
-            dataBase.CloseConnections();
+            DataBaseService.AddProduct(product);
+
             var productMenu = new ProductMenu(product);
             productMenu.Show();
         }
-        public void Button_Click(object sender, RoutedEventArgs e)
+
+        public void ProductButton_Click(object sender, RoutedEventArgs e)
         {
             if (sender is ProductHolderButton button && button.Product != null)
             {
                 var productMenu = new ProductMenu(button.Product);
                 productMenu.Show();
-                //Close();
             }
         }
-        public void Update(object sender, RoutedEventArgs e)
+
+        public void UpdateButton_Click(object sender, RoutedEventArgs e)
         {
-            ProductPanel.Children.Clear();
-
-            DataBaseService dataBase = new DataBaseService();
-            dataBase.InitalizeConnections();
-
-            foreach (var item in dataBase.GetProductByType(_productType))
+            ClearProductPanel();
+            foreach (var item in DataBaseService.GetProductByType(_productType))
             {
-                ProductHolderButton button = new ProductHolderButton();
-                button.Height = 30;
-                button.Width = ProductPanel.Width;
-                button.Content = $"{item.Name}   цена: {item.Price}";
-                button.Click += Button_Click;
-                button.Product = item;
-                ProductPanel.Children.Add(button);
+                AddProductHolderButton($"{item.Name}   цена: {item.Price}", ProductButton_Click, item);
             }
-            ProductTitle.Text = Name;
 
             if (!UserInfoProvider.IsClient())
             {
-                Button addButton = new Button();
-                addButton.Height = 30;
-                addButton.Width = ProductPanel.Width;
-                addButton.Content = $"Добавить {Name}";
-                addButton.Click += Add;
-
-                addButton.Background = Brushes.Green;
-
-                ProductPanel.Children.Add(addButton);
+                AddProductButton($"Добавить {ProductTitle}", AddButton_Click);
             }
-            dataBase.CloseConnections();
         }
-        public void Back(object sender, RoutedEventArgs e)
+
+        public void BackButton_Click(object sender, RoutedEventArgs e)
         {
             MainMenu mainMenu = new MainMenu();
             mainMenu.Show();
-            this.Close();
+            Close();
+        }
+
+        public void AddProductButton(string buttonText, RoutedEventHandler clickHandler)
+        {
+            Button addButton = new Button();
+            addButton.Height = 30;
+            addButton.Width = ProductPanel.Width;
+            addButton.Content = buttonText;
+            addButton.Click += clickHandler;
+
+            addButton.Background = Brushes.Green;
+
+            ProductPanel.Children.Add(addButton);
+        }
+
+        public void AddProductHolderButton(string buttonText, RoutedEventHandler clickHandler, IProduct product)
+        {
+            ProductHolderButton button = new ProductHolderButton();
+            button.Height = 30;
+            button.Width = ProductPanel.Width;
+            button.Content = buttonText;
+            button.Click += clickHandler;
+            button.Product = product;
+            ProductPanel.Children.Add(button);
+        }
+
+        public void ClearProductPanel()
+        {
+            ProductPanel.Children.Clear();
         }
     }
 }

@@ -14,9 +14,6 @@ using System.Windows.Shapes;
 
 namespace AZSProject
 {
-    /// <summary>
-    /// Логика взаимодействия для MainMenu.xaml
-    /// </summary>
     public partial class MainMenu : Window
     {
         public MainMenu()
@@ -41,7 +38,7 @@ namespace AZSProject
 
         public void ButtonClose_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            Close();
         }
         public void ButtonSupport_Click(object sender, RoutedEventArgs e)
         {

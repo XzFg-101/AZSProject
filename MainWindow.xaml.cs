@@ -1,80 +1,92 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace AZSProject
 {
-    /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
-        private DataBaseService dataBaseService;
+        public string Phone
+        {
+            get { return PhoneNumber.Text; }
+            set { PhoneNumber.Text = value; }
+        }
+
+        public string Password
+        {
+            get { return PasswordField.Password; }
+            set { PasswordField.Password = value; }
+        }
+
+        public string Status
+        {
+            get { return StatusText.Text; }
+            set { StatusText.Text = value; }
+        }
+
+        public bool IsEmployeeChecked
+        {
+            get { return (bool)isEmployee.IsChecked; }
+        }
+
         public MainWindow()
         {
             InitializeComponent();
+        }
 
-            dataBaseService = new DataBaseService();
-            dataBaseService.InitalizeConnections();
-        }
-        private bool IsPhoneNumberValid(string phoneNumber)
+        public void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-            return phoneNumber.Length == 11 && phoneNumber.All(char.IsDigit);
-        }
-        public void Login(object sender, RoutedEventArgs e)
-        {
-            string phoneNumber = PhoneNumber.Text;
+            string phoneNumber = Phone;
 
             if (!IsPhoneNumberValid(phoneNumber))
             {
-                StatusText.Text = "Неверный номер телефона";
+                Status = "Неверный номер телефона";
                 return;
             }
 
-            var user = dataBaseService.LoginUser(phoneNumber, Password.Password);
+            var user = DataBaseService.LoginUser(phoneNumber, Password);
             if (user == null)
             {
-                StatusText.Text = "Неверные данные";
+                Status = "Неверные данные";
             }
             else
             {
-                if ((bool)isEmployee.IsChecked) user.IsClient = true; 
+                if (IsEmployeeChecked) user.IsClient = true;
                 UserInfoProvider.SetUser(user);
                 var mainMenu = new MainMenu();
                 mainMenu.Show();
-                dataBaseService.CloseConnections();
-                this.Close();
+                Close();
             }
         }
-        public void Register(object sender, RoutedEventArgs e)
+
+        public void RegisterButton_Click(object sender, RoutedEventArgs e)
         {
-            string phoneNumber = PhoneNumber.Text;
+            string phoneNumber = Phone;
 
             if (!IsPhoneNumberValid(phoneNumber))
             {
-                StatusText.Text = "Неверный номер телефона";
+                Status = "Неверный номер телефона";
                 return;
             }
 
-            if (!dataBaseService.RegistrateUser(phoneNumber, Password.Password))
+            if (!DataBaseService.RegistrateUser(phoneNumber, Password))
             {
-                StatusText.Text = "Неверные данные для регистрации";
+                Status = "Неверные данные для регистрации";
             }
             else
             {
-                Login(sender, e);
+                LoginButton_Click(sender, e);
             }
+        }
+
+        public void CloseButton_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        public bool IsPhoneNumberValid(string phoneNumber)
+        {
+            return phoneNumber.Length == 11 && phoneNumber.All(char.IsDigit);
         }
     }
 }

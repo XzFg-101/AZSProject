@@ -16,11 +16,11 @@
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
 
-        <TextBlock Name="ProductTitle" Text="Топливо" FontSize="30" Grid.Row="0" HorizontalAlignment="Left" RenderTransformOrigin="0.485,0.483"/>
-        <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="0,40,-17,0" Width="Auto" Grid.RowSpan="2" >
+        <TextBlock Name="ProductTitleText" Text="Топливо" FontSize="30" Grid.Row="0" HorizontalAlignment="Left" RenderTransformOrigin="0.485,0.483"/>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="0,40,-10,0" Width="Auto" Grid.RowSpan="2" >
             <StackPanel x:Name="ProductPanel" Width="563"/>
         </ScrollViewer>
-        <Button Content="Назад" Grid.Row="2" Click="Back" HorizontalAlignment="Left" Margin="10,8,0,7" Width="285" />
-        <Button Content="Обновить" Grid.Row="2" Click="Update" HorizontalAlignment="Left" Margin="304,8,0,7" Width="286" />
+        <Button Content="Назад" Grid.Row="2" Click="BackButton_Click" HorizontalAlignment="Left" Margin="10,8,0,7" Width="285" />
+        <Button Content="Обновить" Grid.Row="2" Click="UpdateButton_Click" HorizontalAlignment="Left" Margin="304,8,0,7" Width="286" />
     </Grid>
 </Window>

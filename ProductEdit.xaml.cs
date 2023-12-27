@@ -1,28 +1,39 @@
-﻿using AZSProject.Models;
+﻿using AZSProject;
+using AZSProject.Models;
 using System.Windows;
 
 namespace AZSProject
 {
-    /// <summary>
-    /// Логика взаимодействия для ProductEdit.xaml
-    /// </summary>
     public partial class ProductEdit : Window
     {
         private IProduct _product;
-        private DataBaseService _dataBaseService;
-
         public ProductEdit(IProduct product)
         {
             InitializeComponent();
             _product = product;
-            _dataBaseService = new DataBaseService();
-            // Заполнение текстовых полей информацией о товаре
-            ProductNameTextBox.Text = _product.Name;
-            ProductPriceTextBox.Text = _product.Price.ToString();
-            ProductStatusTextBox.Text = _product.Status;
-            ProductDescriptionTextBox.Text = _product.Description;
-        }
 
+            // Заполнение текстовых полей информацией о товаре
+            SetProductName(_product.Name);
+            SetProductPrice(_product.Price.ToString());
+            SetProductStatus(_product.Status);
+            SetProductDescription(_product.Description);
+        }
+        private void SetProductName(string productName)
+        {
+            ProductNameTextBox.Text = productName;
+        }
+        private void SetProductPrice(string productPrice)
+        {
+            ProductPriceTextBox.Text = productPrice;
+        }
+        private void SetProductStatus(string productStatus)
+        {
+            ProductStatusTextBox.Text = productStatus;
+        }
+        private void SetProductDescription(string productDescription)
+        {
+            ProductDescriptionTextBox.Text = productDescription;
+        }
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
             // Сохранение изменений
@@ -30,14 +41,10 @@ namespace AZSProject
             _product.Price = (double)decimal.Parse(ProductPriceTextBox.Text);
             _product.Status = ProductStatusTextBox.Text;
             _product.Description = ProductDescriptionTextBox.Text;
-            _dataBaseService.InitalizeConnections();
-            // Дополнительный код для сохранения изменений в базе данных
-            _dataBaseService.UpdateProduct( _product );
-            _dataBaseService.CloseConnections();
+            DataBaseService.UpdateProduct(_product);
             // Закрытие окна
             this.Close();
         }
-
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
             // Отмена изменений и закрытие окна
