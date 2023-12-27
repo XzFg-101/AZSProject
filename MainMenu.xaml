@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AZSProject"
         mc:Ignorable="d"
-        Title="MainMenu" Height="450" Width="800">
+        Title="Главное меню" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
@@ -17,12 +17,14 @@
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <Grid Grid.Column="1" Margin="0,135,0,10" Grid.RowSpan="2">
+        <TextBlock Name="AzsStatusText" Text="АЗС открыта" Margin="0,72,0,144" Grid.Row="0" HorizontalAlignment="Center" Grid.Column="1" Grid.RowSpan="2"/>
+        <TextBlock Name="StatusText" Text="Вы авторизованы как: Клиент" Margin="76,0,24,144" Grid.Row="0" Grid.Column="2" Grid.RowSpan="2"></TextBlock>
+        <Grid Grid.Column="1" Margin="0,115,0,117" Grid.RowSpan="3">
             <StackPanel Margin="0,25,0,12">
-                <Button x:Name="Support" Content="Тех. поддержка" Margin="4"></Button>
+                <Button x:Name="Support" Content="Тех. поддержка" Margin="4" Click="ButtonSupport_Click"></Button>
                 <Button x:Name="Fuel" Content="Топливо" Margin="4" Click="ButtonFuel_Click"></Button>
                 <Button x:Name="Service" Content="Дополнительные услуги" Margin="4" Click="ButtonService_Click"></Button>
-                <Button x:Name="Out" Content="Выход из системы" Margin="4"></Button>
+                <Button x:Name="Out" Content="Выход из системы" Margin="4" Click="ButtonClose_Click"></Button>
             </StackPanel>
         </Grid>
     </Grid>

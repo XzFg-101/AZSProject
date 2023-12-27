@@ -102,21 +102,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="DataBaseService.cs" />
-    <Compile Include="Fuel.xaml.cs">
-      <DependentUpon>Fuel.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="AditionalElements\ProductHolderButton.cs" />
+    <Compile Include="Backend\DataBaseService.cs" />
+    <Compile Include="Backend\RegLogContext.cs" />
+    <Compile Include="Backend\UserInfoProvider.cs" />
     <Compile Include="Models\Fuel.cs" />
+    <Compile Include="Models\IProduct.cs" />
     <Compile Include="Models\Service.cs" />
     <Compile Include="Models\User.cs" />
-    <Page Include="AdditionServices.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Fuel.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="MainMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -125,9 +118,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="AdditionServices.xaml.cs">
-      <DependentUpon>AdditionServices.xaml</DependentUpon>
-    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -139,15 +129,31 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="ProductCatalog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ProductEdit.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ProductMenu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ProductCatalog.xaml.cs">
+      <DependentUpon>ProductCatalog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProductEdit.xaml.cs">
+      <DependentUpon>ProductEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProductMenu.xaml.cs">
+      <DependentUpon>ProductMenu.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>

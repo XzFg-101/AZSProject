@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AZSProject"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Авторизация" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
@@ -35,13 +35,11 @@
             </Grid.ColumnDefinitions>
             <TextBlock Text="Номер телефона:" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="3" Margin="0,5,10,0"></TextBlock>
             <TextBox Grid.Column ="1" Grid.Row="1" Grid.ColumnSpan="3" Name="PhoneNumber" Margin="0,0,10,26" Grid.RowSpan="2"></TextBox>
-            <PasswordBox Grid.Column ="1" Grid.Row="3" Grid.ColumnSpan="3" Name="Password" Margin="0,0,10,0"></PasswordBox>
-            <CheckBox Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2" x:Name="isEmployee" IsThreeState="False" IsChecked="False" Height="20" Content="Являюсь сотруднком" />
+            <PasswordBox Grid.Column ="1" Grid.Row="3" Grid.ColumnSpan="3" Name="PasswordField" Margin="0,0,10,0"></PasswordBox>
+            <CheckBox Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2" x:Name="isEmployee" IsThreeState="False" IsChecked="False" Height="20" Content="Войнти как клиент (Для сотрудников)" />
             <TextBlock Text="Пароль:" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="3" Margin="0,3,10,0"/>
-            <Button Name ="LoginButton" Grid.Column="1" Grid.Row="5" Content="Войти" Margin="10,0,10,0" Click="Login"></Button>
-            <Button Name ="RegButton" Grid.Column="2" Grid.Row="5" Content="Регистрация" Click="Register" Margin="10,0,10,0"/>
-            <Button Grid.Column="1" Grid.Row="5" Content="Войти" Margin="10,0,10,0" Click="Button_Click"></Button>
-                <Button Grid.Column="2" Grid.Row="5" Content="Регистрация" Margin="10,0,10,0"/>
+            <Button Name ="LoginButton" Grid.Column="1" Grid.Row="5" Content="Войти" Margin="10,0,10,0" Click="LoginButton_Click"></Button>
+            <Button Name ="RegButton" Grid.Column="2" Grid.Row="5" Content="Регистрация" Click="RegisterButton_Click" Margin="10,0,10,0"/>
         </Grid>
     </Grid>
 </Window>

@@ -19,11 +19,6 @@ namespace AZSProject
     {
         public App()
         {
-            IntalizeDataBase();
         }
-        private void IntalizeDataBase()
-        {
-            
-        } 
     }
 }

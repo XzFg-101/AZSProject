@@ -1,0 +1,26 @@
+﻿<Window x:Class="AZSProject.ProductMenu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AZSProject"
+        mc:Ignorable="d"
+        Title="Информация о товрае" Height="300" Width="600">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="33*"></RowDefinition>
+            <RowDefinition Height="29*"></RowDefinition>
+            <RowDefinition Height="27*"></RowDefinition>
+            <RowDefinition Height="154*"></RowDefinition>
+            <RowDefinition Height="41*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Text ="012" FontSize="24" Name="ProductNameText" Grid.Column="0" Grid.Row="0" Background="Black" Foreground="White"/>
+        <TextBlock Name="ProductPriceText" FontSize="20" Grid.Column="0" Grid.Row="1" Background="Black" Opacity="0.8" Foreground="White"/>
+        <TextBlock Name ="ProductStatusText" FontSize="16" Grid.Column="0" Grid.Row="2" Background="Black" Opacity="0.6" Foreground="White"/>
+        <TextBlock Name ="ProductDescriptionText" FontSize="18" Grid.Column="0" Grid.Row="3"/>
+        <Button Content ="Заказать" FontSize="18" Name="ActionButton" Grid.Column="0" Grid.Row="4"/>
+    </Grid>
+</Window>

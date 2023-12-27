@@ -14,28 +14,36 @@ using System.Windows.Shapes;
 
 namespace AZSProject
 {
-    /// <summary>
-    /// Логика взаимодействия для MainMenu.xaml
-    /// </summary>
     public partial class MainMenu : Window
     {
+        public string Status { get => StatusText.Text; } 
         public MainMenu()
         {
             InitializeComponent();
+            StatusText.Text = UserInfoProvider.IsClient() ? "Авторизован как КЛИЕНТ" : "Авторизован как СОТРУДНИК";
         }
 
         public void ButtonService_Click(object sender, RoutedEventArgs e)
         {
-            AdditionServices addition = new AdditionServices();
-            addition.Show();
+            ProductCatalog additionService = new ProductCatalog("Дополнительные услуги", typeof(Service));
+            additionService.Show();
             Close();
         }
 
         public void ButtonFuel_Click(object sender, RoutedEventArgs e)
         {
-            Fuel fuel = new Fuel();
+            ProductCatalog fuel = new ProductCatalog("Топливо", typeof(Fuel));
             fuel.Show();
             Close();
+        }
+
+        public void ButtonClose_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+        public void ButtonSupport_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show($"Номер телефона тех. поддержки: 8(123)-123-12-12");
         }
     }
 }

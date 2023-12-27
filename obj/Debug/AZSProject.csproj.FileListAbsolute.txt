@@ -32,8 +32,6 @@ C:\Users\skoln\AZSProject\obj\Debug\AZSProject.csproj.GenerateResource.cache
 C:\Users\skoln\AZSProject\obj\Debug\AZSProject.csproj.CoreCompileInputs.cache
 C:\Users\skoln\AZSProject\obj\Debug\MainMenu.g.cs
 C:\Users\skoln\AZSProject\obj\Debug\MainMenu.baml
-C:\Users\skoln\AZSProject\obj\Debug\AdditionServices.g.cs
-C:\Users\skoln\AZSProject\obj\Debug\AdditionServices.baml
 C:\Users\skoln\AZSProject\bin\Debug\EntityFramework.dll
 C:\Users\skoln\AZSProject\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\skoln\AZSProject\bin\Debug\System.Data.SQLite.dll
@@ -61,3 +59,9 @@ C:\Users\skoln\AZSProject\bin\Debug\System.Memory.xml
 C:\Users\skoln\AZSProject\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\skoln\AZSProject\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\skoln\AZSProject\obj\Debug\AZSProject_Content.g.cs
+C:\Users\skoln\AZSProject\obj\Debug\ProductEdit.baml
+C:\Users\skoln\AZSProject\obj\Debug\ProductCatalog.g.cs
+C:\Users\skoln\AZSProject\obj\Debug\ProductEdit.g.cs
+C:\Users\skoln\AZSProject\obj\Debug\ProductMenu.g.cs
+C:\Users\skoln\AZSProject\obj\Debug\ProductCatalog.baml
+C:\Users\skoln\AZSProject\obj\Debug\ProductMenu.baml
